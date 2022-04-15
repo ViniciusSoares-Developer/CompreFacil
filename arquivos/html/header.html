@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+        header{
+            background: rgba(128, 0, 128, 1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 3% 10px 3%;
+        }
+        /*login and register*/
+        header>section:nth-child(2){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header>section:nth-child(2) button{
+            background-color: white;
+            border: none;
+            border-radius: 10px;
+            width: 10vw;
+            height: 2vw;
+            margin: 3px;
+            
+            color: rgba(128, 0, 128, 1);
+            font-family: 'Times New Roman';
+            font-style: normal;
+            font-weight: bolder;
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
+            letter-spacing: 0.1in;
+        }
+        header>section:nth-child(2) button:nth-child(2){
+            font-size: 15px;
+            width: 8vw;
+            letter-spacing: 0.05in;
+        }
+
+        /*Search and Logo*/
+        header>section:nth-child(1){
+            display: flex;
+            align-items: center;
+        }
+        header>section:nth-child(1)>div{
+            margin: 0 0 0 10px;
+            display: flex;
+            flex-direction: row;
+        }
+        header>section:nth-child(1)>div>input[type="text"]{
+            display: flex;
+            color: rgba(128, 0, 128, 1);
+            font-size: 12px;
+            vertical-align: center;
+
+            padding: 0.5vw;
+            border: none;
+            border-radius: 30px;
+            outline: none;
+        }
+        header>section:nth-child(1)>div>input[type="text"]::placeholder{
+            color: rgba(128, 0, 128, 1);
+        }
+        header>section:nth-child(1) input[type="submit"]{
+            display: flex;
+            width: 2vw;
+            height: 2vw;
+            background: none;
+            background-image: url("img/lupa.png");
+            background-size: contain;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <section>
+            <a href="index.html"><img src="img/logoP.png" alt="click to go page beginning" width="100"></a>
+            <div>
+                <input type="text" placeholder="Search">
+                <input type="submit" value="">
+            </div>
+        </section>
+        <section>
+            <button>Login</button>
+            <button>Register</button>
+        </section>
+    </header>
+</body>
+</html>

@@ -1,0 +1,12 @@
+body{
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+header{
+    background: rgba(128, 0, 128, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 3% 10px 3%;
+}

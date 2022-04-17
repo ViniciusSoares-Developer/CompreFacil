@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+        
+        header {
+            background: rgba(128, 0, 128, 1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 3% 10px 3%;
+        }
+        /*Search and Logo*/
+        
+        header>section:nth-child(1) {
+            display: flex;
+            align-items: center;
+        }
+        
+        header>section:nth-child(1)>div {
+            margin: 0 0 0 10px;
+            display: flex;
+            flex-direction: row;
+        }
+        
+        header>section:nth-child(1)>a>img {
+            max-width: 8vmax;
+            width: 10vw;
+            min-width: 50px;
+        }
+        
+        header>section:nth-child(1)>div>input[type="text"] {
+            display: flex;
+            color: rgba(128, 0, 128, 1);
+            font-size: 12px;
+            vertical-align: center;
+            width: 1vw;
+            min-width: 150px;
+            padding: 0.5vw;
+            border: none;
+            border-radius: 30px;
+            outline: none;
+        }
+        
+        header>section:nth-child(1)>div>input[type="text"]::placeholder {
+            color: rgba(128, 0, 128, 1);
+        }
+        
+        header>section:nth-child(1) input[type="submit"] {
+            display: flex;
+            width: 2vw;
+            min-width: 30px;
+            height: 2vw;
+            min-height: 30px;
+            background: none;
+            background-image: url("../img/lupa.png");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+        /*Account View and Options*/
+        
+        header>section:nth-child(2) {
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+        
+        header>section:nth-child(2)>img {
+            border-radius: 100%;
+            margin-right: 3px;
+            width: 5vw;
+            min-width: 50px;
+        }
+        
+        header>section:nth-child(2)>div {
+            position: relative;
+        }
+        
+        header>section:nth-child(2)>div>h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 25px;
+        }
+        
+        header>section:nth-child(2)>div>button {
+            border: 0;
+            padding: 3px;
+            width: 100%;
+            background-color: white;
+            color: rgba(128, 0, 128, 1);
+            font-size: 15px;
+            font-family: 'Times New Roman';
+            font-weight: bold;
+        }
+        /*Options*/
+        
+        header>section:nth-child(2)>div>div {
+            align-items: center;
+            position: absolute;
+            flex-direction: column;
+            width: 100%;
+        }
+        
+        header>section:nth-child(2)>div>div>a {
+            border-color: rgba(128, 0, 128, 1);
+            border: 2px solid;
+            box-sizing: border-box;
+            width: 100%;
+            background-color: white;
+            padding: 3px;
+            text-decoration: none;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <section>
+            <a href="index.php"><img src="../img/logoP.png" alt="click to go page beginning"></a>
+            <div>
+                <input type="text" placeholder="Search">
+                <input type="submit" value="">
+            </div>
+        </section>
+        <section>
+            <img src="../img/50x50.png" alt="">
+            <div>
+                <h1>Nome User</h1>
+                <button>
+                    Options
+                    
+                </button>
+                <div style="display: none;">
+                    <a href="">Perfil</a>
+                    <a href="">Config</a>
+                    <a href="">New item</a>
+                    <a href="">Logout</a>
+                </div>
+            </div>
+        </section>
+    </header>
+    <script>
+        /*login visibility*/
+        const btnOptions = document.querySelector('header>section:nth-child(2)>div>button'),
+            optionDisplay = document.querySelector('header>section:nth-child(2)>div>div');
+        btnOptions.onclick = () => {
+            if (optionDisplay.style.display === "none") {
+                optionDisplay.style.display = "flex";
+            } else {
+                optionDisplay.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

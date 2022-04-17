@@ -102,6 +102,7 @@
             width: 100%;
             background-color: white;
             color: rgba(128, 0, 128, 1);
+            border-radius: 10px;
             font-size: 15px;
             font-family: 'Times New Roman';
             font-weight: bold;
@@ -143,12 +144,11 @@
                 <h1>Nome User</h1>
                 <button>
                     Options
-                    
                 </button>
                 <div style="display: none;">
+                    <a href="">New item</a>
                     <a href="">Perfil</a>
                     <a href="">Config</a>
-                    <a href="">New item</a>
                     <a href="">Logout</a>
                 </div>
             </div>
@@ -161,8 +161,10 @@
         btnOptions.onclick = () => {
             if (optionDisplay.style.display === "none") {
                 optionDisplay.style.display = "flex";
+                btnOptions.style.borderRadius = "10px 10px 0 0"
             } else {
                 optionDisplay.style.display = "none";
+                btnOptions.style.borderRadius = "10px"
             }
         }
     </script>

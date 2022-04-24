@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        main>form{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 25%;
+        }
+        main>form input{
+            box-sizing: border-box;
+            border: 3px solid rgba(128, 0, 128, 1);
+            border-radius: 10px;
+            padding: 5px;
+            margin-top: 10px;
+            width: 100%;
+            height: 5vh;
+        }
+        main>form input::placeholder{
+            font-family: 'Times New Roman', Times, serif;
+        }
+        main div{
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        main div>input[type="checkbox"]{
+            position: absolute;
+            right: -40px;
+            width: 9%;
+        }
+        main div>input[type="number"]::-webkit-inner-spin-button{
+            display: none;
+        }
+        main>form>input[type="submit"]{
+            color: rgba(128, 0, 128, 1);
+            font-size: xx-large;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: transparent;
+            width: 80%;
+            height: 8vh;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <form action="" method="post">
+            <input type="text" name="nome" id="nome" placeholder="Nome">
+            <input type="text" name="email" id="email" placeholder="Email">
+            <input type="text" name="cEmail" id="cEmail" placeholder="Confirm email">
+            <input type="text" name="password" id="password" placeholder="Password">
+            <input type="text" name="cPassword" id="cPassword" placeholder="Confirm password">
+            <div>
+                <input type="number" name="cpfCnpj" id="cpfCnpj" placeholder="Number">
+                <input type="checkbox" name="cpfCnpjButton" id="cpfCnpjButton">
+            </div>
+            <input type="text" name="telephone" id="telephone" placeholder="Telephone">
+            <input type="text" name="adress" id="adress" placeholder="Adress">
+            <input type="submit" name="submit" id="submit" value="Register">
+        </form>
+    </main>
+</body>
+</html>

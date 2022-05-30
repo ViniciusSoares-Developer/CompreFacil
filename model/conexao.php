@@ -24,9 +24,9 @@ class Database
     {
         # Informações sobre o banco de dados:
         $db_host = "localhost";
-        $db_nome = "banco";
-        $db_usuario = "usuario";
-        $db_senha = "senha";
+        $db_nome = "comprefacildb";
+        $db_usuario = "root";
+        $db_senha = "";
         $db_driver = "mysql";
 
         # Informações sobre o sistema:

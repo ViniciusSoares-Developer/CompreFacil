@@ -1,5 +1,6 @@
 <?php
 
+@include_once '../model/conexao.php';
 @include_once '../model/usuario.php';
 
 $nome = ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['nome'])) ? $_POST['nome'] : null;
@@ -20,7 +21,11 @@ $tela = ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['tela'])) ? $_POS
 if($tela == 'usuarioRegistro' && $diretriz == 'on'){
     $endereco = "$rua, $numero, $cidade - $estado";
     $usuarioOBJ = new Usuario($nome, $email, $cEmail, $senha, $cSenha, $telefone, $endereco, $empresarial);
-    var_dump($usuarioOBJ);die;
+    $usuarioOBJ->criarConta();
+    header('Location: http://localhost/Projects/ProjetoIntegrador/');
 }else if($tela == 'usuarioLogin'){
-
+    $usuarioOBJ = new Usuario(null, $email, $email, $senha, $senha, null, null, null);
+    session_start();
+    $_SESSION['usuario'] = $usuarioOBJ->buscarPorEmail($email);
+    header(sprintf('Location: %s', $_SERVER['HTTP_REFERER']));
 }

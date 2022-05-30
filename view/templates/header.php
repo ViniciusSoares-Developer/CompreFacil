@@ -36,8 +36,10 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <li><a class="dropdown-item" href="#">Perfil</a></li>
                                 <li><a class="dropdown-item" href="#">Configurações</a></li>
-                                <li><a class="dropdown-item" href="#">Novo item</a></li>
-                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                                <?php if($usuarioLogado['empresarial'] == 1):?>
+                                    <li><a class="dropdown-item" href="#">Novo item</a></li>
+                                <?php endif;?>
+                                <li><a class="dropdown-item" href="?logout=true">Logout</a></li>
                             </ul>
                         </div>
                     </div>
@@ -52,14 +54,14 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="./" method="POST" class="d-flex flex-column">
-                            <input type="text" name="login" id="" placeholder="Nome de usuario / E-mail" required>
+                        <form action="./controller/controllerUsuario.php" method="POST" class="d-flex flex-column">
+                            <input type="text" name="email" id="" placeholder="E-mail" required>
                             <section>
                                 <input type="password" name="senha" id="senha" placeholder="Senha" required>
                                 <button type="button" onclick="visiblePassword()"><i class="fa fa-eye" id="iconSenha"></i></button>
                             </section>
                             <input type="hidden" name="tela" value="usuarioLogin">
-                            <input type="submit" value="Entrar" name="" id="" placeholder="password">
+                            <input type="submit" value="Entrar" placeholder="password">
                         </form>
                     </div>
                 </div>

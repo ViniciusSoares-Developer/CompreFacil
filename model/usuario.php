@@ -81,8 +81,38 @@ class Usuario{
     }
     public function setEmpresarial($empresarial)
     {
-        $this->empresarial = $empresarial;
+        if($empresarial){
+            $this->empresarial = true;
+        }
+        else{
+            $this->empresarial = false;
+        }
 
         return $this;
+    }
+
+    public function criarConta(){
+        $sql = "INSERT INTO `usuario` (`nome`, `email`, `senha`, `telefone`, `endereco`, `empresarial`)
+        VALUES (:nome, :email, :senha, :telefone, :endereco, :empresarial)";
+        $db = Database::conexao();
+        $stmt = $db->prepare($sql);
+        $stmt->bindValue(':nome', $this->getNome());
+        $stmt->bindValue(':email', $this->getEmail());
+        $stmt->bindValue(':senha', $this->getSenha());
+        $stmt->bindValue(':telefone', $this->getTelefone());
+        $stmt->bindValue(':endereco', $this->getEndereco());
+        $stmt->bindValue(':empresarial', $this->getEmpresarial());
+        $stmt->execute();
+    }
+    public function buscarPorEmail($email){
+        $sql = "SELECT * FROM `usuario` WHERE `email` LIKE :email";
+        $db = Database::conexao();
+        $stmt = $db->prepare($sql);
+        $stmt->bindValue(':email', $this->getEmail());
+        $stmt->execute();
+        $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if($list[0]['email'] == $this->getEmail() && $list[0]['senha'] == $this->getSenha()){
+            return $list[0];
+        }
     }
 }

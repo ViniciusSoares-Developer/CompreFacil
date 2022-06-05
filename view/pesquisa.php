@@ -6,7 +6,7 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li>
-                    <input type="checkbox" name="barato" id="barato"> 
+                    <input type="checkbox" name="barato" id="barato">
                     <label for="barato">barato</label>
                 </li>
                 <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -15,11 +15,11 @@
         </div>
     </div>
     <div class="d-flex justify-content-center w-100 flex-wrap">
-        <?php for ($i = 0; $i < 6; $i++) : ?>
-            <section class="produto-container">
+        <?php foreach ($listaProdutos as $produto) : ?>
+            <a href="?pagina=4&idp=<?= $produto['id'] ?>" class="produto-container">
                 <!-- detalhes do produto -->
-                <img src="https://via.placeholder.com/80x80" alt="">
-                <span>Nome Produto</span>
+                <img src="https://via.placeholder.com/80x80" alt="" />
+                <span><?= $produto['nome'] ?></span>
                 <!-- estrelas -->
                 <div class="avaliacao">
                     <i class="fa fa-star"></i>
@@ -27,13 +27,10 @@
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-half-empty"></i>
                     <i class="fa fa-star-o"></i>
-                    <span>(5)</span>
                 </div>
-                <!-- Botoes de compra -->
-                <button>Adicionar carrinho</button>
-                <button>Comprar agora</button>
-            </section>
-        <?php endfor; ?>
+            </a>
+
+        <?php endforeach; ?>
     </div>
     <div class="mais-container d-flex justify-content-center w-100">
         <button>Ver mais</button>

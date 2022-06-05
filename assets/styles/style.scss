@@ -1,20 +1,26 @@
 @import "variaveis";
 
 @font-face {
-    font-family: 'Nathallia';
-    src: url(../fonts/Nathallia.ttf);
-    font-weight: lighter;
+    font-family: "";
+    src: url();
 }
 
-*{
-    font-family: sans-serif;
+*:not(.fa) {
+    font-family: sans-serif!important;
 }
 
-
-body{
-    &::-webkit-scrollbar{ width: $scrollbar; }
-    &::-webkit-scrollbar-thumb{ background-color: white; border: 1px solid $primary_color; }
-    &::-webkit-scrollbar-track{ background-color: $primary_color;}
+html {
+    &::-webkit-scrollbar {
+        width: $scrollbar;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: white;
+        border: 1px solid $primary_color;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: $primary_color;
+    }
     scrollbar-width: $scrollbar;
     scrollbar-color: white;
 }
@@ -27,7 +33,7 @@ footer {
 
 header {
     width: 100vw;
-    nav>section>a{
+    nav > section > a {
         margin: 10px;
     }
     nav {
@@ -56,14 +62,14 @@ header {
         flex-direction: column;
         margin: 0;
     }
-    button[type="button"]{
+    button[type="button"] {
         background-color: white;
         color: $primary_color;
         margin: 5px;
         border-radius: 10px;
         font-weight: bold;
     }
-    button[name="criarConta"]{
+    button[name="criarConta"] {
         transform: scale(80%);
     }
     label {
@@ -74,41 +80,44 @@ header {
     label > input {
         padding: 3px;
     }
-    label>a>button{
+    label > a > button {
         position: absolute;
         right: 0;
-        margin: 0!important;
-        border-radius: 0!important;
+        margin: 0 !important;
+        border-radius: 0 !important;
         background-color: white;
         color: $primary_color;
         height: 100%;
     }
-    .usuarioViewHeader{
+    .usuarioViewHeader {
         color: white;
     }
-    .usuarioViewHeader img{
+    .usuarioViewHeader img {
         margin-right: 10px;
         border-radius: 100%;
     }
-    .dropdown>a{
+    .usuarioViewHeader .name{
+        font-size: 12px;
+    }
+    .dropdown > a {
         padding: 5%;
-        width: 100%;
+        width: 80%;
         text-align: center;
-        font-size: 11px!important;
+        font-size: 11px !important;
         background-color: white;
         color: $primary_color;
     }
-    .dropdown>a:hover{
+    .dropdown > a:hover {
         background-color: rgba($color: white, $alpha: 0.8);
     }
-    .dropdown>a:focus{
+    .dropdown > a:focus {
         background-color: white;
         color: $primary_color;
     }
 }
 
 main {
-    display: flex!important;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -116,24 +125,24 @@ main {
     padding-bottom: 50px;
     padding-top: 50px;
     position: relative;
-    .drop-container{
+    .drop-container {
         position: absolute;
         top: 0;
         left: 5px;
     }
-    .dropdown button{
+    .dropdown button {
         background-color: $primary_color;
         border-color: white;
     }
-    .dropdown button:hover{
+    .dropdown button:hover {
         border-color: white;
         background-color: rgba($color: $primary_color, $alpha: 0.5);
     }
-    .mais-container button{
+    .mais-container button {
         margin-top: 50px;
         width: 20%;
         height: 30px;
-        background-color: rgba($color: $primary_color, $alpha: 1.0);
+        background-color: rgba($color: $primary_color, $alpha: 1);
         color: white;
         border: none;
     }
@@ -161,7 +170,7 @@ footer {
         outline: none;
         list-style: none;
     }
-    li{
+    li {
         margin-right: 10px;
     }
     .fa {
@@ -195,7 +204,7 @@ footer {
     max-width: 800px;
     min-width: 200px;
     height: 25vw;
-    img{
+    img {
         height: 25vw;
     }
 }
@@ -204,18 +213,27 @@ footer {
     width: 100vw;
     padding-left: 5%;
     padding-right: 5%;
-    .carousel-control-prev, .carousel-control-next{
+    .carousel-control-prev,
+    .carousel-control-next {
         width: 5%;
-        background-color: black;    
+        background-color: black;
     }
-    .carousel-indicators>button{
+    .carousel-indicators > button {
         cursor: default;
         background-color: black;
         border: none;
     }
-    .carousel-indicators{
+    .carousel-indicators {
         bottom: 0;
         margin-bottom: 0;
+    }
+}
+
+#carouselImagemProduto{
+    margin: 0!important;
+    .carousel-control-prev,
+    .carousel-control-next{
+        background-color: transparent!important;
     }
 }
 
@@ -228,14 +246,15 @@ footer {
     flex-direction: column;
     border: 3.5px solid $primary_color;
     border-radius: 10px;
-    >span{
+    text-decoration: none;
+    > span {
         margin: 8px;
     }
-    .avaliacao{
+    .avaliacao {
         margin-left: 20px;
         width: 100%;
     }
-    button{
+    button {
         background-color: $primary_color;
         color: white;
         border: none;
@@ -243,20 +262,21 @@ footer {
         margin: 3px;
         width: 80%;
     }
-    .fa{
+    .fa {
         color: $primary_color;
     }
 }
 
 .modal-body {
-    input:not([name="senha"]), section{
+    input:not([name="senha"]),
+    section {
         margin-bottom: 10px;
     }
-    section{
+    section {
         display: flex;
         position: relative;
         margin-bottom: 30px;
-        button{
+        button {
             background-color: transparent;
             height: 100%;
             width: 10%;
@@ -265,11 +285,11 @@ footer {
             position: absolute;
             right: 0;
         }
-        input{
+        input {
             width: 100%;
         }
     }
-    input[type="submit"]{
+    input[type="submit"] {
         background-color: $primary_color;
         color: white;
         position: absolute;
@@ -277,7 +297,7 @@ footer {
         right: 5%;
         padding: 0.3em;
     }
-    input:not([type="submit"]){
+    input:not([type="submit"]) {
         border: 2px solid $primary_color;
         border-radius: 5px;
         box-sizing: border-box;
@@ -286,11 +306,18 @@ footer {
     }
 }
 
-main>form {
+.modal-dinamic{
+    width: 100%;
+    padding: 0!important;
+}
+
+main > form {
     display: flex;
     flex-direction: column;
     width: 30%;
-    input, select{
+    input,
+    select,
+    textarea {
         border: 2px solid $primary_color;
         margin: 10px;
         width: 100%;
@@ -299,14 +326,14 @@ main>form {
         padding-left: 5%;
         padding-right: 5%;
     }
-    input[type="checkbox"]{
+    input[type="checkbox"] {
         height: 15px;
         width: 15px;
     }
-    label>input{
+    label > input {
         width: 10px;
     }
-    button{
+    button {
         background-color: $primary_color;
         color: white;
         border: 2px solid transparent;
@@ -314,9 +341,153 @@ main>form {
         margin-left: 10px;
         margin-right: 10px;
     }
-    button:hover{
+    button:hover {
         background-color: white;
         color: $primary_color;
         border-color: $primary_color;
     }
 }
+
+.produto {
+    display: flex;
+    width: 70%;
+    img {
+        width: 400px;
+        height: 400px;
+    }
+    section {
+        display: grid;
+        width: 100%;
+        text-align: center;
+        grid-template-rows: 20% 50% 20% 10%;
+    }
+    .titulo-produto {
+        font-size: 110%;
+        font-weight: bold;
+    }
+    .descricao-produto {
+        &::-webkit-scrollbar {
+            width: $scrollbar;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: white;
+            border: 1px solid $primary_color;
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: $primary_color;
+        }
+        scrollbar-width: $scrollbar;
+        scrollbar-color: white;
+
+        margin-left: 50px;
+        text-align: left;
+        overflow: auto;
+    }
+    .preco-produto {
+        font-size: 25px;
+        font-weight: bold;
+    }
+    button{
+        background-color: $primary_color;
+        color: white;
+        border: none;
+        padding: 10px;
+        margin: 3px;
+    }
+    .image-btn{
+        padding: 0!important;
+    }
+}
+
+.map{
+    margin: 40px;
+}
+
+.botoes{
+    width: 100%;
+    button{
+        width: 100%;
+        display: block;
+        text-align: left;
+        border: 0;
+        border-top: 2px;
+        border-bottom: 2px;
+        border-style: solid;
+        border-color: $primary-color;
+        background-color: transparent;
+        color: $primary_color;
+        margin-top: 10px;
+        box-sizing: border-box;
+        font-size: larger;
+    }
+}
+
+.comentariosEstrelas{
+    border: 2px solid $primary_color;
+    display: flex;
+    width: 80%;
+    height: 200px;
+    margin-top: 20px;
+    div:not(.comentarios-container){
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .comentarios-container{
+        width: 70%;
+        border-right: 2px solid $primary_color;
+        display: grid;
+        grid-template-rows: 40% 40% 21%;
+    }
+    .comentarios-container>section{
+        display: flex;
+        border-bottom: 2px solid $primary_color;
+    }
+    .comentarios-container img{
+        transform: scale(50%);
+        border-radius: 100%;
+    }
+    .comentarios-container button{
+        border: none;
+        background-color: $primary_color;
+    }
+    .comentario{
+        font-size: 10px;
+    }
+}
+
+.perfilUsuario{
+    width: 100%;
+    display: grid;
+    grid-template-rows: 450px 100px;
+    div:nth-child(1){
+        position: relative;
+        margin-bottom: 150px;
+    }
+    .foto{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 15%;
+        border: 2px solid white;
+        border-collapse: separate;
+        border-radius: 100%;
+        transform: translateY(50%);
+    }
+    .foto-fundo{
+        width: 100%;
+        height: 100%;
+    }
+    .nome{
+        font-size: 200%;
+    }
+    span{
+        padding-left: 50px;
+        padding-right: 50px;
+        font-size: larger;
+    }
+}
+
+input[type="number"]::-webkit-inner-spin-button{ display: none; }

@@ -4,14 +4,7 @@
         <input type="email" name="email" id="" placeholder="Email" required>
         <input type="email" name="confirmEmail" autocomplete="none" placeholder="Confirmar email" required>
         <input type="text" name="telefone" id="" placeholder="Telefone">
-        <select name="estado" id="" placeholder="Estado">
-            <?php foreach($estadosBrasileiros as $estados):?>
-                <option value="<?=$estados?>"><?=$estados?></option>
-            <?php endforeach;?>
-        </select>
-        <input type="text" name="cidade" id="" placeholder="Cidade" required>
-        <input type="text" name="rua" id="" placeholder="Rua" required>
-        <input type="text" name="numero" id="" placeholder="Numero" required>
+        <input type="text" name="cep" id="" placeholder="CEP" required>
         <input type="password" name="senha" id="" placeholder="Senha" required>
         <input type="password" name="confirmSenha" id="" placeholder="Confirmar senha" required>
         <input type="hidden" name="tela" id="" value="usuarioRegistro" required>

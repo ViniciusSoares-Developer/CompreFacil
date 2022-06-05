@@ -1,0 +1,13 @@
+<a href="?pagina=4&idp=<?=$produto['id']?>" class="produto-container">
+    <!-- detalhes do produto -->
+    <img src="https://via.placeholder.com/80x80" alt="" />
+    <span><?= $produto['nome'] ?></span>
+    <!-- estrelas -->
+    <div class="avaliacao">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-empty"></i>
+        <i class="fa fa-star-o"></i>
+    </div>
+</a>

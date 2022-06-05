@@ -9,10 +9,10 @@ class Usuario{
     private $endereco;
     private $empresarial;
 
-    public function __construct($nome, $email, $cEmail, $senha, $cSenha, $telefone, $endereco, $empresarial){
+    public function __construct($nome, $email, $senha, $telefone, $endereco, $empresarial){
         $this->setNome($nome);
-        $this->setEmail($email, $cEmail);
-        $this->setSenha($senha, $cSenha);
+        $this->setEmail($email);
+        $this->setSenha($senha);
         $this->setTelefone($telefone);
         $this->setEndereco($endereco);
         $this->setEmpresarial($empresarial);
@@ -31,12 +31,9 @@ class Usuario{
     {
         return $this->email;
     }
-    public function setEmail($email, $cEmail)
+    public function setEmail($email)
     {
-        if($email == $cEmail){
-            $this->email = $email;
-        }
-
+        $this->email = $email;
         return $this;
     }
 
@@ -44,12 +41,9 @@ class Usuario{
     {
         return sha1($this->senha);
     }
-    public function setSenha($senha, $cSenha)
+    public function setSenha($senha)
     {
-        if($senha == $cSenha){
-            $this->senha = $senha;
-        }
-
+        $this->senha = $senha;
         return $this;
     }
 
@@ -93,7 +87,7 @@ class Usuario{
 
     public function criarConta(){
         $sql = "INSERT INTO `usuario` (`nome`, `email`, `senha`, `telefone`, `endereco`, `empresarial`)
-        VALUES (:nome, :email, :senha, :telefone, :endereco, :empresarial)";
+        VALUES (':nome', ':email', ':senha', ':telefone', ':endereco', ':empresarial')";
         $db = Database::conexao();
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':nome', $this->getNome());
@@ -111,8 +105,10 @@ class Usuario{
         $stmt->bindValue(':email', $this->getEmail());
         $stmt->execute();
         $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        if($list[0]['email'] == $this->getEmail() && $list[0]['senha'] == $this->getSenha()){
-            return $list[0];
+        if($list){
+            if($list[0]['email'] == $this->getEmail() && $list[0]['senha'] == $this->getSenha()){
+                return $list[0];
+            }
         }
     }
 }

@@ -12,7 +12,7 @@
                     </a>
                 </label>
             </section>
-            <?php if (!$usuarioLogado) : ?>
+            <?php if (!$logado) : ?>
                 <section>
                     <ul>
                         <li>
@@ -27,17 +27,17 @@
                 <section class="usuarioViewHeader d-flex align-items-center">
                     <img src="http://via.placeholder.com/50x50" alt="">
                     <div>
-                        <span>User name</span>
+                        <div class="name"><?=substr($_SESSION['user'][1], 0, 15)?></div>
                         <div class="dropdown">
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                 Opções
                             </a>
     
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Perfil</a></li>
+                                <li><a class="dropdown-item" href="?pagina=6&idu=<?=$_SESSION['user'][0]?>">Perfil</a></li>
                                 <li><a class="dropdown-item" href="#">Configurações</a></li>
-                                <?php if($usuarioLogado['empresarial'] == 1):?>
-                                    <li><a class="dropdown-item" href="#">Novo item</a></li>
+                                <?php if($_SESSION['user'][2] == 1):?>
+                                    <li><a class="dropdown-item" href="?pagina=5&id=<?=$_SESSION['user'][0]?>">Novo item</a></li>
                                 <?php endif;?>
                                 <li><a class="dropdown-item" href="?logout=true">Logout</a></li>
                             </ul>

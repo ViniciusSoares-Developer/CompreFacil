@@ -2,7 +2,7 @@
 
 >Projeto Integrador.
 
->Site de compra e venda focado no comércio local, destinado a mostrar a melhor variedade de preço e produtos mais próximos a sua residência.
+>Site de comércio local, destinado a mostrar a melhor variedade de preço e produtos mais próximos a sua residência.
 
 <img src="./prints/inicial.png">
 <img src="./prints/registro.png">
